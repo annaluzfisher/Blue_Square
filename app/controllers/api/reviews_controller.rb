@@ -30,9 +30,7 @@ class Api::ReviewsController < ApplicationController
     end
   end
 
-  def show
-    
-  end
+
 
   private
   def review_params

@@ -26,9 +26,9 @@
 # /public
 
 # **/log
-# *.log
+*.log
 # /log*
-# /log
+/log
 # .development
 # .development.log
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_14_162006) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_12_175229) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -51,7 +51,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_14_162006) do
     t.bigint "cart_id"
     t.index ["cart_id"], name: "index_cart_items_on_cart_id"
     t.index ["item_id"], name: "index_cart_items_on_item_id"
-    t.index ["size", "item_id"], name: "index_cart_items_on_size_and_item_id", unique: true
   end
 
   create_table "carts", force: :cascade do |t|
