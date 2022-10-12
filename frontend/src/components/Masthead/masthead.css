@@ -1,0 +1,79 @@
+.masthead {
+  width: inherit;
+  height: inherit;
+  margin-top: 0px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 2;
+}
+.masthead img {
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  height: inherit;
+  opacity: 0.77;
+  background-size: cover;
+  object-fit: cover;
+  object-position: 0px 0px;
+}
+
+.overlay {
+  background-image: radial-gradient(black, black);
+  position: absolute;
+  height: inherit;
+  width: inherit;
+}
+
+.masthead-content-wrapper{
+  color: white;
+  top: 16%;
+  left: 8%;
+  position: absolute;
+  z-index: 10;
+  width: 600px;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.page-title {
+  top:0;
+  margin-bottom: 20px;
+  font-family: "roboto", sans-serif;
+  font-weight: 900;
+  font-size: 55px;
+  white-space: nowrap;
+position: relative;
+}
+
+.promo-details{
+  display: flex;
+  flex-direction: column;
+  font-family: 'Raleway';
+  font-weight: 500;
+  font-size: 25px;
+  height: 400px;
+  margin-top: 0%;
+  position: relative;
+
+}
+.promo-details > span{
+  margin: 5px;
+}
+
+.buttons-container{
+  display: flex;
+  justify-content: left;
+  margin-top: 20px;
+  position: relative;
+  z-index: 100;
+}
+.buttons-container > a{
+  position: relative;
+  z-index: 2000;
+}
+.buttons-container > a:hover{
+  cursor: pointer;
+}
+

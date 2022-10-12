@@ -1,0 +1,42 @@
+.bar-holder{
+  margin-top: 8%;
+  height: 15vh;
+  min-height: 100px;
+  width: 100vw;
+  background-color: #FAFAFA;
+  display: flex;
+  align-items: center;
+}
+
+.bar-holder .search-form{
+  position: relative;
+  width: 40%;
+  top: auto;
+  margin-left: 13%;
+}
+
+.bar-holder .search-form > input{
+  background-color: #FAFAFA;
+}
+
+.search-results-header{
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100px;
+}
+.search-results-header h2{
+  padding-left: 5%;
+  padding-right: 5%;
+  font-family: 'Roboto';
+  font-weight: 500;
+}
+.search-results-header :nth-child(2){
+  color: #8C8C8C;
+  font-size: 1em;
+  font-weight: 300;
+
+}
+

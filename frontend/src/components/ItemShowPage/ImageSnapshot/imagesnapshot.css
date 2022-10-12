@@ -1,0 +1,87 @@
+  .snapshot-image-container{
+    position: relative;
+  height:100%;
+  width:100%;
+  padding-bottom: 100%;
+  transition: all .3s ease-in-out;
+
+  }
+  .snapshot-container:hover{
+        -webkit-box-shadow: 0 0 6px 3px rgb(191, 191, 191);
+    -moz-box-shadow: 0 0 6px 3px rgb(191, 191, 191);
+    box-shadow: 0 0 6px 3px rgb(191, 191, 191);
+  }
+  .snapshot-container{
+    width: fit-content;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px;
+          animation-name: fade-in;
+    animation-duration: .9s;
+    animation-iteration-count: 1;
+  }
+
+  @keyframes fade-in{
+    0%{
+      opacity: 0;
+    }
+    100% {
+      opacity: 100;
+    }
+  }
+
+  .lower-snapshot-container{
+    width:20vw;
+    min-width: 35px;
+
+    margin-bottom: 0%;
+    font-family: 'Raleway',sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+   
+  }
+
+  .lower-snapshot-container > div {
+    padding-left: 2%;
+    margin-left: 0;
+    padding-top: 10px;
+   word-break: break-word;
+   white-space: pre-line;
+  }
+
+.star-ratings-container{
+  display: flex;
+align-items: center;
+justify-content: space-between;
+width: 90%;
+/* border: 2px solid greenyellow; */
+}
+.star-container{
+  width: fit-content;
+
+}
+.line{
+  border-top: 1px solid rgb(186, 186, 186);
+  width:60%;
+}
+
+.fa-star{
+
+  font-size: .8em;
+}
+
+.snapshot-image-container img{
+  left:0;
+  position: absolute;
+  width: 100%;
+  height:inherit;
+   background-size: cover;
+ object-fit: cover;
+ object-position: 0px 0px;
+ z-index: 97;
+ background-color: #F6F6F6;
+}

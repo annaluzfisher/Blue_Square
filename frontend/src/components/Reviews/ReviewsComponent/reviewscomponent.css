@@ -1,0 +1,72 @@
+.reviews-header, .ratings-header{
+  width: 85%;
+  height: 10%;
+  min-height: 80px;
+  border-bottom: 1px solid rgb(157, 157, 157);
+  position: relative;
+  margin-left:8%;
+}
+.reviews-header > h2{
+  font-family: 'Roboto';
+  font-size: 35px;
+}
+
+.ratings-header{
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.stars-container-reviews{
+  width:200px;
+  position: relative;
+  z-index: 50;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 40px;
+  /* border: 1px solid red; */
+}
+.stars-container-reviews > svg{
+font-size: 30px;
+position: relative;
+z-index: 40;
+color: var(--orange)
+}
+
+.ratings-header p {
+  font-family: 'Nunito';
+  font-size: 38px;
+  font-weight: 600;
+  margin: 0;
+}
+.bottom-bar{
+  /* border: 2px solid blue; */
+  height: 5%;
+  width: 100%;
+  display: flex;
+    justify-content: right;
+margin-top: 2%;
+}
+
+.bottom-bar  div{
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgb(160, 160, 160);
+
+  height: fit-content;
+  width: 130px;
+  padding: 10px;
+  color: rgb(67, 67, 67);
+}
+
+.bottom-bar  div:hover{
+  cursor: pointer;
+}
+
+.show  div{
+  transform: scale(.8);
+ margin-bottom: 1%;
+}

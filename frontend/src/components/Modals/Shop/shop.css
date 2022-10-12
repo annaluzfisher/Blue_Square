@@ -1,0 +1,36 @@
+.shop-modal{
+
+  height: inherit;
+  width:inherit;
+}
+
+.shop-modal-page{
+    display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: fit-content;
+  margin-left: 10%;
+  margin-right: 10%;
+  min-width: 450px;
+  padding : 20px;
+}
+
+.activities-holder{
+  background-color: var(--bggray);
+  height: fit-content;
+  padding-bottom: 30px;
+display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: left;
+  font-family: 'Raleway',sans-serif;
+  font-weight: 500;
+  padding-left: 30px;
+  padding-right: 30px;
+
+}
+.activities-holder h2{
+  font-family: 'Raleway',sans-serif; 
+  font-weight: 600;
+
+}

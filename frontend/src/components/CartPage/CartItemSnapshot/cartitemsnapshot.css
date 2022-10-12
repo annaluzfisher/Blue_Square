@@ -1,0 +1,141 @@
+.cis-image-box{
+  height:fit-content;
+  min-width: 130px;
+  width: fit-content;
+  margin: 30px;
+  margin-top:35px;
+  /* border: 2px solid blue; */
+  transition: all .2s ease-in;
+
+}
+
+.cis-image-container{
+  position: relative;
+  height:100%;
+  width:100%;
+  padding-bottom: 100%;
+
+
+
+  transition: all .2s ease-in;
+}
+.cis-image-container img{
+  left:0;
+  position: absolute;
+  width: 100%;
+  height:inherit;
+   background-size: cover;
+ object-fit: cover;
+ object-position: 0px 0px;
+
+ background-color: #F6F6F6;
+  transition: all .2s ease-in;
+
+}
+.cis-container{
+  width: 60%;
+  min-width: 700px;
+  /* border: 2px solid pink; */
+  height: 20%;
+  min-height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+          -webkit-box-shadow: 0 0 6px 3px rgb(191, 191, 191);
+    -moz-box-shadow: 0 0 6px 3px rgb(191, 191, 191);
+    box-shadow: 0 0 6px 3px rgb(191, 191, 191);
+margin-bottom: 4%;
+      animation-name: fade-in;
+    animation-duration: .8s;
+    animation-iteration-count: 1;
+}
+
+.cis-container >div {
+  display: flex;
+}
+.details{
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto';
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.details  h3{
+  font-size: 1.1em;
+}
+.details h3:hover{
+  cursor: pointer;
+}
+.details span{
+  font-weight: 300;
+  font-size: .7em;
+}
+
+
+.cis-editor{
+  display: flex;
+  padding: 30px;
+
+}
+.cis-editor div{
+  height: 40px;
+  width: 40px;
+  background-color: var(--bggray);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cis-editor :nth-child(2){
+  background-color: white;
+  cursor: default;
+}
+.trash-or-edit{
+  width: 7%;
+  min-width: 30px;
+  height: 150px;
+  /* border: 1px solid blue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.trash-or-edit div{
+  background-color: var(--bggray);
+  height: 130%;
+  /* border: 1px solid black; */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.trash-or-edit div:hover{
+  cursor: pointer;
+}
+.cis-container2{
+  width: 75%;
+  min-width: 500px;
+  border: 2px solid pink;
+  height: 40%;
+  min-height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+          -webkit-box-shadow: 0 0 6px 3px rgb(191, 191, 191);
+    -moz-box-shadow: 0 0 6px 3px rgb(191, 191, 191);
+    box-shadow: 0 0 6px 3px rgb(191, 191, 191);
+    transition: all .5s ease-in;
+}
+.cis-container2 .cis-image-container{
+  min-width: 200px;
+}
+.price {
+  margin-left: 20px;
+  padding-right: 20px;
+
+}
+
+
+

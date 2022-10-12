@@ -1,0 +1,31 @@
+.ridgeline-container{
+  background-color: black;
+  width:100vw;
+  height: 30%;
+  min-height: 60px;
+}
+
+/* .image-cover{ */
+  /* border: 4px solid rgb(246, 24, 24); */
+  /* height: 300px;
+  width: 100vw;
+  position: absolute; */
+  /* background-color: black; */
+/* } */
+.reveal-animation {
+  animation-name: reveal;
+  animation-iteration-count: 1;
+  animation-duration: 2s;
+}
+@keyframes reveal {
+	0% {
+		transform: none;
+	}
+	100% {
+		transform: translatex(-1000px);
+	}
+}
+
+.image-container > img{
+  margin-top: 0px;
+}

@@ -1,0 +1,26 @@
+.review-show-container{
+  width: 85%;
+  margin-left: 8%;
+  /* border: 1px solid blue; */
+  opacity: 0;
+  border-bottom: 1px solid rgb(150, 150, 150);
+  height: 200px;
+  animation-name:fade-in;
+  animation-duration: .8s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.r-b-holder{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1%;
+}
+.review-show-container > div{
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+.review  div{
+  margin-left: 1%;
+  width: 13px;
+}

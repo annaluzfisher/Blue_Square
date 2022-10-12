@@ -1,0 +1,15 @@
+.require-login-page{
+  color: black;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.require-buttons-container{
+display: flex;
+height: 20%;
+width: 30%;
+justify-content: space-around;
+margin-top: 10%;
+}

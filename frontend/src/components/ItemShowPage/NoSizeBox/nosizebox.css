@@ -1,0 +1,5 @@
+.no-size-box-form  input:focus, 
+.no-size-box-form  select:focus,
+.no-size-box-form  textarea:focus{
+  outline: none;
+}

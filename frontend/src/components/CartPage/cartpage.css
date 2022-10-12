@@ -1,0 +1,89 @@
+.cart-page{
+  width: 95vw;
+  height:fit-content;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+
+  /* align-items: center; */
+    margin-top: 8%;
+    margin-left: 5%;
+}
+
+.order-summary{
+  height:fit-content;
+  width: 500px;
+  min-width: fit-content;
+  padding: 20px;
+  background-color: var(--bggray);
+  margin-left: 10%;
+  margin-right: 3%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 130px;
+}
+
+.order-summary h2{
+  font-family: 'Roboto';
+  font-size: 40px;
+  font-weight: 400;
+  width: 90%;
+
+  padding-bottom: 5%;
+  border-bottom: 1px solid gray;
+}
+
+.title-holder{
+  display: flex;
+ align-items: baseline;
+ justify-content: baseline;
+
+}
+.title-holder h1{
+  font-family:'Roboto';
+  font-weight: 600;
+  font-size: 45px;
+  padding: 30px;
+}
+
+.order-summary div{
+  border-bottom:1px solid gray;
+    width: 90%;
+  padding-bottom: 5%;
+  padding-top: 5%;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Roboto';
+}
+.order-summary div :first-child{
+  font-size: 20px;
+}
+
+.order-summary .button{
+  margin-top: 5%;
+}
+.theme-title {
+    font-family:'Roboto';
+  font-weight: 600;
+  font-size: 60px;
+  padding-left: 3%;
+ margin-bottom: -5%;
+}
+
+.empty-holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20%;
+        animation-name: fade-in;
+    animation-duration: .8s;
+    animation-iteration-count: 1;
+}
+
+.loader{
+  align-self: center;
+  margin-left: 50%;
+  margin-top: 50%;
+}

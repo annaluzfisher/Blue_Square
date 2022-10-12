@@ -1,0 +1,30 @@
+{
+  "name": "bluesquare",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "scripts": {
+    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annaluzfisher/Blue-Square.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/annaluzfisher/Blue-Square/issues"
+  },
+  "homepage": "https://github.com/annaluzfisher/Blue-Square#readme",
+  "dependencies": {
+    "react-icons": "^4.4.0",
+    "react-spinners": "^0.13.5"
+  }
+}

@@ -1,0 +1,31 @@
+/* TODO Add site wide styles */
+html, #root {
+  height: 100%;
+  top: 0;
+  left: 0px;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+    --orange: #CD4C1D;
+    --bggray: #F1F1F1
+}
+body{
+  height: 100%;
+}
+.app{
+  position:absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: fade-in;
+  animation-duration: .1s;
+  animation-iteration-count: 1;
+  animation-delay: .4s;
+  animation-fill-mode: forwards;
+}
+
+a{
+  text-decoration: none;
+  color:inherit;
+}

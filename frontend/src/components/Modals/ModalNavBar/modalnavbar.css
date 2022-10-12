@@ -1,0 +1,42 @@
+.modals-nav-bar {
+  width: 100vw;
+  height: 10%;
+  background: transparent;
+  z-index: 10;
+  margin-top: 2%;
+  display: flex;
+}
+
+
+.x-icon{
+transform: translatey(20px);
+  position: absolute;
+  margin-left: 90%;
+  height: 30px;
+ width:30px;
+ margin-right: 8%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 23px;
+ -webkit-box-shadow: 0 0 5px 2px rgb(219, 217, 217);
+    -moz-box-shadow: 0 0 5px 2px rgb(219, 217, 217);
+    box-shadow: 0 0 5px 2px rgb(219, 217, 217);
+ 
+}
+
+.x-icon:hover{
+  cursor: pointer;
+}
+
+.modal-shopping{
+  transform: translatey(20px);
+  position: absolute;
+  margin-left: 85%;
+  height: 30px;
+ width:30px;
+ margin-right: 8%;
+ align-items: center;
+ font-size: 24px;
+
+}

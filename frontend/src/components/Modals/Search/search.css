@@ -1,0 +1,112 @@
+.search-modal-page{
+  display: flex;
+  flex-direction: row;
+  height: inherit;
+  width:inherit;
+}
+
+
+.search-form{
+  border: 2px solid rgb(0, 0, 0);
+   height: fit-content;
+  width: 30vw;
+  min-width: 200px;
+  position: fixed;
+  margin-left: 80px;
+  top: 35px;
+  display:flex ;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-success{
+  background-color: inherit;
+  border: none;
+  height:40px;
+  width: 40px;
+  margin-right: 10px;
+
+}
+
+.search-form > input{
+  height:40px;
+  width: 85%;
+  border: none;
+  padding-left: 10px;
+}
+
+.btn > .fa-magnifying-glass{
+  font-size: 1.6em;
+  color:rgb(147, 147, 147)
+}
+.btn-success:hover{
+  cursor: pointer;
+}
+
+.search-form  input:focus, 
+.search-form  select:focus,
+.search-form  textarea:focus{
+  outline: none;
+}
+
+
+[type=search] {
+    -webkit-appearance: textfield;
+}
+
+.suggestions{
+  margin-top: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+.scroller{
+  overflow-x: scroll;
+   display: flex;
+  align-items: center;
+}
+.header-holder{
+  display: flex;
+ justify-content: space-between;
+ width: 90%;
+ align-self: center;
+ align-items: center;
+}
+
+.arrow-button{
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 1em;;
+min-width: 100px;
+height: fit-content;
+/* border: 1px solid blue; */
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px;
+transition: all .7s ease-out;
+}
+
+.arrow-button:hover{
+  cursor: pointer;
+  transform: translateX(10%);
+}
+
+.no-results-container{
+  padding: 10%;
+  opacity: 0;
+  animation-delay: 1.3s;
+  animation-name: fade-in;
+  animation-duration: .8s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 20h;
+}

@@ -1,0 +1,17 @@
+.errors-container{
+  color:rgb(168, 30, 30);
+  background-color: rgb(254, 200, 200);
+  font-size: 15px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  border-radius: 5px;
+  padding: 5%;
+  margin-top: 30px;
+  opacity: 0;
+  transition: all .5s ease-in;
+  animation-name: fade-in;
+  animation-duration: .6s;
+  animation-iteration-count: 1;
+  animation-delay:.5s;
+  animation-fill-mode: forwards;
+}

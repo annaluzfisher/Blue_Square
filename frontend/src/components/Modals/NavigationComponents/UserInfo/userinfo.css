@@ -1,0 +1,47 @@
+.user-info-wrapper {
+  height: 520px;
+  width: 370px;
+  margin-left: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+}
+.details {
+  font-family: "nunito", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 1rem;
+  margin-bottom: 15px;
+}
+.user-info-wrapper > span {
+  margin-top: 20px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+}
+
+.user-info-wrapper .button {
+  margin-top: 40px;
+}
+.user-info-wrapper :nth-child(5) {
+  margin-top: 30px;
+  border-top: 1px solid rgb(193, 191, 191);
+}
+
+.logout-button {
+  margin: 25px;
+  margin-left: 0;
+  width: 22%;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.3s ease-in-out;
+}
+.logout-button > span {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+.fa-angle-right {
+  color: var(--orange);
+}
+.logout-button:hover {
+  width: 25%;
+}

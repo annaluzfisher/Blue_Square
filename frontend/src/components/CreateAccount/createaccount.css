@@ -1,0 +1,18 @@
+.create-account{
+   height: 67vh;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  position: relative;
+
+}
+.ca-page{
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+
+
+}
