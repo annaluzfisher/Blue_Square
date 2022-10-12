@@ -20,8 +20,7 @@ class Api::CartItemsController < ApplicationController
     quantity = params[:cart_item][:quantity]
     cart_id = params[:cart_item][:cart_id]
     @cart = Cart.find(cart_id)
-    # debugger
-       size = ' ' if !size
+    size = ' ' if !size
     check =  CartItem.where("size = ? AND item_id = ? AND cart_id = ?",size,item_id,cart_id)
       if check.length > 0
         @found_cart_item = check[0]
