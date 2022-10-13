@@ -25,7 +25,7 @@ function CartPage() {
   const [suggestionId, setSuggestionId] = useState();
   const [loading, setLoading] = useState(true);
    const [loadingCheckout, setLoadingCheckout] = useState(false);
-  const [modal, setModal] = useState(false);
+
   const [okToCheckout, setOkToCheckout] = useState(true);
   const page = document.getElementById("cart-page");
   const [order, setOrder] = useState(true);
@@ -49,12 +49,12 @@ function CartPage() {
 
   const vals = Object.values(collections?.collections);
   useEffect(() => {
-    if (collections) {
+    if (!suggestionId) {
       const random = Math.floor(Math.random(vals.length * 1) * vals.length);
 
       setSuggestionId(vals[random]?.id);
     }
-  }, [numItems, vals.length]);
+  },[vals]);
 
   const [subtotal, setSubtotal] = useState(0);
 
@@ -104,13 +104,12 @@ function CartPage() {
         setLoadingCheckout(false)
         setThankYou(true);
       },600)
-      dispatch(clearCart(currentUser.id))
+      // dispatch(clearCart(currentUser.id))
     } else {
       setOkToCheckout(false);
       setOrder(false);
     }
-    setModal(true);
-    page.style = { opacity: 0.5 };
+    
   };
 
   if (!currentUser) return null;

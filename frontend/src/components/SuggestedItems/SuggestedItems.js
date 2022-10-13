@@ -2,7 +2,7 @@ import './suggesteditems.css'
 import ImageSnapshot from '../ItemShowPage/ImageSnapshot'
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { fetchCollections, getCollections } from '../../store/collections';
+import {  getCollections } from '../../store/collections';
 function SuggestedItems({title, collectionId}) {
 
 

@@ -11,11 +11,13 @@ class Api::CartsController < ApplicationController
        end
   end
 
-  # def clear
-  #    user_id = params[:user_id]
-  #    @cart_items = CartItem.where('user_id = ?', user_id)
-  #    @cart_items.each {|item| item.delete }
-  # end
+  def clear
+    # debugger
+     user_id = params[:user_id]
+     @cart_items = Cart.cart_items.where('user_id = ?', user_id)
+
+    #  @cart_items.each {|item| item.delete }
+  end
 
   def create
     # debugger

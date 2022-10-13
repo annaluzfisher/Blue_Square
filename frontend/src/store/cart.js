@@ -20,9 +20,8 @@ const clearStore = (userId) => ({
 })
 
 export const clearCart = (userId) => async (dispatch) => {
-    const res = await csrfFetch(`/api/carts/{}`, {
-      method: "DELETE",
-      body: JSON.stringify({ user }),
+    const res = await csrfFetch(`/api/carts/${userId}`, {
+      method: "DELETE"
     });
 }
 

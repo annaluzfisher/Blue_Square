@@ -10,7 +10,7 @@ Rails.application.routes.draw do
    resource :session, only: [ :show, :create, :destroy ]
    get 'search/:query', to: 'search#search'
      get 'search5/:query', to: 'search#search5'
-     delete 'carts/:userId' to 'cart#clear'
+     delete 'carts/:userId', to: 'carts#clear'
    get '*path', to: 'static_pages#frontend_index'
   end
 end
