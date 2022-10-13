@@ -14,9 +14,9 @@ class Api::CartsController < ApplicationController
   def clear
     # debugger
      user_id = params[:user_id]
-     @cart_items = Cart.cart_items.where('user_id = ?', user_id)
-
-    #  @cart_items.each {|item| item.delete }
+     @cart_items = CartItem.where('cart_id = ?', user_id)
+     @cart_items.each {|item| item.delete }
+     
   end
 
   def create
@@ -29,8 +29,12 @@ class Api::CartsController < ApplicationController
      end
   end
 
-  def destroy
-  end
+  # def destroy
+  #   debugger
+  #       user_id = params[:user_id]
+  #    @cart_items = CartItem.where('cart_id = ?', user_id)
+  #    @cart_items.each {|item| item.delete }
+  # end
 
 
 

@@ -2,7 +2,7 @@ import "./cartpage.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { fetchCart, getCart } from "../../store/cart";
+import { fetchCart, getCart , clearCart} from "../../store/cart";
 import CartItemSnapshot from "./CartItemSnapshot";
 import Button from "../Buttons/Button";
 import SuggestedItems from "../SuggestedItems";
@@ -47,7 +47,7 @@ function CartPage() {
     }
   });
 
-  
+
   const vals = Object.values(collections?.collections);
   useEffect(() => {
     if (!suggestionId) {
@@ -93,24 +93,29 @@ function CartPage() {
      }, 600)
     }
   },[subtotal])
+
   const handleCheckout = () => {
+    if (subtotal === 0) {
+      return null
+    }
+   
     setLoadingCheckout(true)
     setTimeout(()=>{
       setLoadingCheckout(false)
-    },400)
-    if (subtotal < 2000) {
+    },600)
+    if (subtotal < 2000 && subtotal > 0) {
       setOkToCheckout(true);
-      setLoadingCheckout(true)
+      setLoading(true)
       setTimeout(()=>{ 
-        setLoadingCheckout(false)
         setThankYou(true);
+        setLoading(false);
       },600)
-      // dispatch(clearCart(currentUser.id))
-    } else {
+      dispatch(clearCart(currentUser.id))
+    } else if(subtotal > 2000){
       setOkToCheckout(false);
       setOrder(false);
     }
-    
+  
   };
 
   if (!currentUser) return null;

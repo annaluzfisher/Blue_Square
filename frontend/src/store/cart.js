@@ -14,15 +14,17 @@ const deleteItem = (payload) => ({
   payload
 });
 
-const clearStore = (userId) => ({
-  type: CLEAR_CART,
-  userId
+const clearStore = () => ({
+  type: CLEAR_CART
 })
 
 export const clearCart = (userId) => async (dispatch) => {
     const res = await csrfFetch(`/api/carts/${userId}`, {
       method: "DELETE"
-    });
+    })
+    if (res.ok){
+      dispatch(clearStore())
+    }
 }
 
 
@@ -115,6 +117,8 @@ const cartReducer = (state = { items: {} , numItems: 0}, action) => {
     case DELETE_ITEM:
         newState = {...action.payload}
       return newState;
+      case CLEAR_CART:
+      return {items: {} , numItems: 0};
     default:
       return state;
   }
