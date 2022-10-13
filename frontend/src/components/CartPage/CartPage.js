@@ -10,6 +10,10 @@ import { getCurrentUser } from "../../store/session";
 import { getCollections } from "../../store/collections";
 import BeatLoader from "react-spinners/BeatLoader";
 
+
+
+
+
 function CartPage() {
   const currentUser = useSelector(getCurrentUser);
   const { userId } = useParams();
@@ -18,13 +22,13 @@ function CartPage() {
     if (!currentUser) navigate("/Cart");
     if (currentUser?.id !== parseInt(userId)) navigate("/Cart");
   }, [userId, currentUser]);
-
   const dispatch = useDispatch();
   const storeCart = useSelector(getCart);
   const collections = useSelector(getCollections());
   const [suggestionId, setSuggestionId] = useState();
   const [loading, setLoading] = useState(true);
-
+  const [modal, setModal] = useState(true);
+  const [okToCheckout, setOkToCheckout] = useState(true)
   useEffect(() => {
     dispatch(fetchCart(currentUser?.id));
   }, [currentUser]);
@@ -72,10 +76,20 @@ function CartPage() {
     }
   }, [currentUser]);
 
+  const handleCheckout = () => {
+    if (subtotal < 2000) {
+      setOkToCheckout(true);
+    } else {
+      setOkToCheckout(false);
+    }
+    setModal(true);
+  }
+
   if (!currentUser) return null;
 
   return (
     <>
+      {modal && <CheckoutModal ok={okToCheckout} />}
       <div className="cart-page">
         <div>
           <div className="title-holder">
@@ -120,7 +134,7 @@ function CartPage() {
             <span>Total</span>
             <span>$ {parseFloat(subtotal * 0.09 + subtotal).toFixed(2)}</span>
           </div>
-          <Button name={"CHECK OUT NOW"} />
+          <Button name={"CHECK OUT NOW"} type={'submit'} onClick={handleCheckout} />
         </div>
       </div>
 
@@ -131,5 +145,24 @@ function CartPage() {
     </>
   );
 }
+
+// const CheckoutModal = ({okToCheckout}) =>{
+
+// return (
+//   {okToCheckout ?
+  
+//   <>
+//   <div className="checkout-modal">
+
+//   </div>
+//   </>
+//   :
+//   <>
+//   <div>
+//   </div>
+//   </>
+//   }
+// )
+// }
 
 export default CartPage;

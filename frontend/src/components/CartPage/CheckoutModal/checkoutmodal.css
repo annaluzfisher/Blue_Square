@@ -1,0 +1,11 @@
+.checkout-modal{
+  position: fixed;
+  height: 30%;
+  width: 30%;
+  min-height: 300px;
+  min-width: 250px;
+  margin-left: 50%;
+  margin-right: 50%;
+  border: 2px solid salmon;
+  background-color: antiquewhite;
+}
