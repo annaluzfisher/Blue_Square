@@ -47,6 +47,7 @@ function CartPage() {
     }
   });
 
+  
   const vals = Object.values(collections?.collections);
   useEffect(() => {
     if (!suggestionId) {
