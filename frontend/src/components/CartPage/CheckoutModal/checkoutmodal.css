@@ -1,11 +1,12 @@
 .checkout-modal{
   position: fixed;
-  height: 30%;
-  width: 30%;
-  min-height: 300px;
-  min-width: 250px;
-  margin-left: 50%;
-  margin-right: 50%;
+  height: 50%;
+  width: 60%;
+  min-height: 400px;
+  min-width: 300px;
+  margin-left: 15%;
+  margin-top: 100px;
   border: 2px solid salmon;
   background-color: antiquewhite;
+  z-index: 102;
 }

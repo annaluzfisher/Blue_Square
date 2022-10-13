@@ -1,9 +1,19 @@
-import './checkoutmodal.css'
+import "./checkoutmodal.css";
 
-function CheckoutModal({ok}) {
+function CheckoutModal({ ok }) {
   return (
-    <div>CheckoutModal</div>
-  )
+    <>
+      {ok ? (
+        <>
+          <div className="checkout-modal"></div>{" "}
+        </>
+      ) : (
+        <>
+          <div className="checkout-modal"></div>
+        </>
+      )}
+    </>
+  );
 }
 
-export default CheckoutModal
+export default CheckoutModal;

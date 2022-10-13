@@ -9,7 +9,7 @@ import SuggestedItems from "../SuggestedItems";
 import { getCurrentUser } from "../../store/session";
 import { getCollections } from "../../store/collections";
 import BeatLoader from "react-spinners/BeatLoader";
-
+import CheckoutModal from "./CheckoutModal";
 
 
 
@@ -27,8 +27,10 @@ function CartPage() {
   const collections = useSelector(getCollections());
   const [suggestionId, setSuggestionId] = useState();
   const [loading, setLoading] = useState(true);
-  const [modal, setModal] = useState(true);
+  const [modal, setModal] = useState(false);
   const [okToCheckout, setOkToCheckout] = useState(true)
+   const page = document.getElementById("cart-page");
+
   useEffect(() => {
     dispatch(fetchCart(currentUser?.id));
   }, [currentUser]);
@@ -77,12 +79,14 @@ function CartPage() {
   }, [currentUser]);
 
   const handleCheckout = () => {
+    console.log(subtotal < 2000)
     if (subtotal < 2000) {
       setOkToCheckout(true);
     } else {
       setOkToCheckout(false);
     }
     setModal(true);
+    page.style = {opacity: .5}
   }
 
   if (!currentUser) return null;
@@ -90,7 +94,7 @@ function CartPage() {
   return (
     <>
       {modal && <CheckoutModal ok={okToCheckout} />}
-      <div className="cart-page">
+      <div className="cart-page" id={'cart-page'}>
         <div>
           <div className="title-holder">
             <h1>{"SHOPPING BAG"}</h1>
@@ -134,7 +138,7 @@ function CartPage() {
             <span>Total</span>
             <span>$ {parseFloat(subtotal * 0.09 + subtotal).toFixed(2)}</span>
           </div>
-          <Button name={"CHECK OUT NOW"} type={'submit'} onClick={handleCheckout} />
+            <div className="button" onClick={handleCheckout}>CHECK OUT NOW</div>
         </div>
       </div>
 
@@ -146,23 +150,6 @@ function CartPage() {
   );
 }
 
-// const CheckoutModal = ({okToCheckout}) =>{
 
-// return (
-//   {okToCheckout ?
-  
-//   <>
-//   <div className="checkout-modal">
-
-//   </div>
-//   </>
-//   :
-//   <>
-//   <div>
-//   </div>
-//   </>
-//   }
-// )
-// }
 
 export default CartPage;
