@@ -27,7 +27,7 @@ function Footer() {
           </p>
         </div>
 
-        <div className="links-box">
+        <div className="links-box" id='links-box'>
           <Link to="https://github.com/annaluzfisher">
             <i className="fa-brands fa-github-alt"></i>
           </Link>

@@ -11,9 +11,6 @@ import { getCollections } from "../../store/collections";
 import BeatLoader from "react-spinners/BeatLoader";
 import CheckoutModal from "./CheckoutModal";
 
-
-
-
 function CartPage() {
   const currentUser = useSelector(getCurrentUser);
   const { userId } = useParams();
@@ -27,10 +24,11 @@ function CartPage() {
   const collections = useSelector(getCollections());
   const [suggestionId, setSuggestionId] = useState();
   const [loading, setLoading] = useState(true);
+   const [loadingCheckout, setLoadingCheckout] = useState(false);
   const [modal, setModal] = useState(false);
-  const [okToCheckout, setOkToCheckout] = useState(true)
-   const page = document.getElementById("cart-page");
-
+  const [okToCheckout, setOkToCheckout] = useState(true);
+  const page = document.getElementById("cart-page");
+  const [order, setOrder] = useState(true);
   useEffect(() => {
     dispatch(fetchCart(currentUser?.id));
   }, [currentUser]);
@@ -78,23 +76,41 @@ function CartPage() {
     }
   }, [currentUser]);
 
+  const scrollToFooter = () => {
+   const links = document.getElementById('links-box')
+   links.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  useEffect(()=>{
+    if ((!order && !okToCheckout) && subtotal < 2000){
+     setLoadingCheckout(true)
+     setTimeout(()=>{
+       setOrder(true)
+       setOkToCheckout(true)
+     }, 600)
+    }
+  },[subtotal])
   const handleCheckout = () => {
-    console.log(subtotal < 2000)
+    setLoadingCheckout(true)
+    setTimeout(()=>{
+      setLoadingCheckout(false)
+    },400)
     if (subtotal < 2000) {
       setOkToCheckout(true);
     } else {
       setOkToCheckout(false);
+      setOrder(false);
     }
     setModal(true);
-    page.style = {opacity: .5}
-  }
+    page.style = { opacity: 0.5 };
+  };
 
   if (!currentUser) return null;
 
   return (
     <>
-      {modal && <CheckoutModal ok={okToCheckout} />}
-      <div className="cart-page" id={'cart-page'}>
+    
+      <div className="cart-page" id={"cart-page"}>
         <div>
           <div className="title-holder">
             <h1>{"SHOPPING BAG"}</h1>
@@ -123,23 +139,50 @@ function CartPage() {
             </>
           )}
         </div>
-
-        <div className="order-summary">
-          <h2>{"Order Summary"}</h2>
-          <div>
-            <span>Order Subtotal</span>
-            <span>$ {subtotal}</span>
+        {order && (
+          <div className="order-summary">
+            <h2>{"Order Summary"}</h2>
+            <div>
+              <span>Order Subtotal</span>
+              <span>$ {subtotal}</span>
+            </div>
+            <div>
+              <span>Estimated Shipping</span>
+              <span>$ {(subtotal * 0.09).toFixed(2)}</span>
+            </div>
+            <div>
+              <span>Total</span>
+              <span>$ {parseFloat(subtotal * 0.09 + subtotal).toFixed(2)}</span>
+            </div>
+            <div className="button" onClick={handleCheckout}>
+              CHECK OUT NOW
+            </div>
           </div>
-          <div>
-            <span>Estimated Shipping</span>
-            <span>$ {(subtotal * 0.09).toFixed(2)}</span>
+        )}
+        {!okToCheckout && !order && (
+          <div className="order-summary">
+            {loadingCheckout ? (
+              <BeatLoader
+              className="loader"
+              color="#CD4C1D"
+              speedMultiplier={0.4} />
+            ) : (
+              <>
+                <h2>{"Are You Sure?"}</h2>
+                <div>
+                  <p>
+                    {
+                      "Looks like you're order is over $2,000 USD. For large orders please call (713) 823-7373."
+                    }
+                  </p>
+                </div>
+                <div className="button" onClick={scrollToFooter}>
+                  CONTACT VIA EMAIL
+                </div>
+              </>
+            )}
           </div>
-          <div>
-            <span>Total</span>
-            <span>$ {parseFloat(subtotal * 0.09 + subtotal).toFixed(2)}</span>
-          </div>
-            <div className="button" onClick={handleCheckout}>CHECK OUT NOW</div>
-        </div>
+        )}
       </div>
 
       <SuggestedItems
@@ -149,7 +192,5 @@ function CartPage() {
     </>
   );
 }
-
-
 
 export default CartPage;

@@ -5,15 +5,15 @@
   display: flex;
   justify-content: space-between;
 
-  /* align-items: center; */
     margin-top: 8%;
     margin-left: 5%;
 }
 
 .order-summary{
   height:fit-content;
-  width: 500px;
-  min-width: fit-content;
+  min-height: 400px;
+  width: 10%;
+  min-width: 500px;
   padding: 20px;
   background-color: var(--bggray);
   margin-left: 10%;
@@ -31,6 +31,13 @@
 
   padding-bottom: 5%;
   border-bottom: 1px solid gray;
+
+}
+
+.order-summary *{
+         animation-name: fade-in;
+    animation-duration: .8s;
+    animation-iteration-count: 1;
 }
 
 .title-holder{
@@ -94,3 +101,7 @@
   margin-top: 50%;
 }
 
+.order-summary p{
+  width: 90%;
+  word-wrap:break-word;
+}
