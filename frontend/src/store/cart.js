@@ -2,7 +2,7 @@ import csrfFetch from "./csrf";
 
 const RECEIVE_CART = "RECEIVE_CART";
 const DELETE_ITEM = "DELETE_ITEM";
-
+const CLEAR_CART = 'CLEAR_CART'
 
 export const receiveCart = (payload) => ({
   type: RECEIVE_CART,
@@ -13,6 +13,18 @@ const deleteItem = (payload) => ({
   type: DELETE_ITEM,
   payload
 });
+
+const clearStore = (userId) => ({
+  type: CLEAR_CART,
+  userId
+})
+
+export const clearCart = (userId) => async (dispatch) => {
+    const res = await csrfFetch(`/api/carts/{}`, {
+      method: "DELETE",
+      body: JSON.stringify({ user }),
+    });
+}
 
 
 export const getCart = (state) => {

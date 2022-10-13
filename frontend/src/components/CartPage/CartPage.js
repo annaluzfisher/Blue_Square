@@ -29,6 +29,8 @@ function CartPage() {
   const [okToCheckout, setOkToCheckout] = useState(true);
   const page = document.getElementById("cart-page");
   const [order, setOrder] = useState(true);
+  const [thankYou, setThankYou] = useState(false);
+
   useEffect(() => {
     dispatch(fetchCart(currentUser?.id));
   }, [currentUser]);
@@ -97,6 +99,12 @@ function CartPage() {
     },400)
     if (subtotal < 2000) {
       setOkToCheckout(true);
+      setLoadingCheckout(true)
+      setTimeout(()=>{ 
+        setLoadingCheckout(false)
+        setThankYou(true);
+      },600)
+      dispatch(clearCart(currentUser.id))
     } else {
       setOkToCheckout(false);
       setOrder(false);
@@ -109,7 +117,6 @@ function CartPage() {
 
   return (
     <>
-    
       <div className="cart-page" id={"cart-page"}>
         <div>
           <div className="title-holder">
@@ -132,7 +139,14 @@ function CartPage() {
                 </div>
               ) : (
                 <div className="empty-holder">
-                  <h1>Looks like your cart is empty</h1>
+                  {thankYou ? (
+                    <>
+                      <h1>Thank You</h1>
+                      <h1>Your order has been placed.</h1>
+                    </>
+                  ) : (
+                    <h1>Looks like your cart is empty</h1>
+                  )}
                   <Button localPath="/" color="black" name={"KEEP SHOPPING"} />
                 </div>
               )}
@@ -163,9 +177,10 @@ function CartPage() {
           <div className="order-summary">
             {loadingCheckout ? (
               <BeatLoader
-              className="loader"
-              color="#CD4C1D"
-              speedMultiplier={0.4} />
+                className="loader"
+                color="#CD4C1D"
+                speedMultiplier={0.4}
+              />
             ) : (
               <>
                 <h2>{"Are You Sure?"}</h2>
