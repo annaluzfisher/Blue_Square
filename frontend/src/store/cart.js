@@ -36,7 +36,14 @@ export const getCart = (state) => {
     return Object.values(state.cart.items);
   }
 };
-
+export const getCartId = (state) => {
+  if (!state) return null;
+  else if (!state.cart) return null;
+  else if (!state.cart.id) return null;
+  else {
+    return state.cart.id
+  }
+};
 
 export const deleteCartItem = (cartItemId) => async (dispatch) => {
   const res = await csrfFetch(`/api/cart_items/${cartItemId}`, {
@@ -113,6 +120,7 @@ const cartReducer = (state = { items: {} , numItems: 0}, action) => {
       }
     }
       newState.numItems = action.payload.numItems || 0;
+ 
       return newState;
     case DELETE_ITEM:
         newState = {...action.payload}

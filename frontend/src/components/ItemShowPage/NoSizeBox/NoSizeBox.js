@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Button from "../../Buttons/Button";
 import { toggleModal } from "../../../store/ui";
 import { useDispatch, useSelector } from "react-redux";
-import { addCartItem, fetchCart } from "../../../store/cart";
+import { addCartItem, fetchCart, getCartId } from "../../../store/cart";
 import { useNavigate } from "react-router-dom";
 import { getCurrentUser } from "../../../store/session";
 
@@ -14,7 +14,7 @@ function NoSizeBox({ item }) {
   const [quantity, setQuantity] = useState("1");
 
   // const storeCart = useSelector((state) => state.cart);
-
+const cartId = useSelector(getCartId)
   const currentUser = useSelector((state) => state.session.user);
 
   const [itemPayload, setItemPayload] = useState({});
@@ -32,6 +32,7 @@ function NoSizeBox({ item }) {
 
 
   useEffect(() => {
+    console.log('where are weeee', cartId)
     if (currentUser) {
       setItemPayload({
         itemId: item.id,

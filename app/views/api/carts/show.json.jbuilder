@@ -12,3 +12,5 @@ end
 json.num_items do
    json.num_items @cart.num_items
 end
+
+json.id @cart.id
