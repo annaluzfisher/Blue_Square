@@ -17,12 +17,10 @@ function CollectionShowPage() {
 useEffect(()=>{
   
   console.log(collectionId, collection?.id);
-    if (collection && collection?.id !== parseInt(collectionId)){
+    if (collection &&  (collection?.id !== parseInt(collectionId))){
       navigate("/404")
   }
-
-
-},[storeCollections,collectionId])
+},[collection,collectionId])
 
 
   useEffect(() => {
@@ -30,7 +28,7 @@ useEffect(()=>{
   }, []);
 
  useEffect(() => {
-   setCollection(storeCollections.collections[collectionId]);
+   setCollection(storeCollections.collections[parseInt(collectionId)]);
  }, [storeCollections]);
 
 

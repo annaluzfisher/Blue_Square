@@ -18,7 +18,7 @@ class Item < ApplicationRecord
   has_many :category_items, foreign_key: :items_id, dependent: :destroy
   has_many :categories, through: :category_items, source: :category
   has_many :collections, through: :categories, source: :collections
-
+p
   include PgSearch::Model
 
   pg_search_scope :search_item, against: {name: 'A', description: 'B' },  using: {

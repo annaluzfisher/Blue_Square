@@ -12,15 +12,16 @@ import ImageSnapshot from "../ItemShowPage/ImageSnapshot";
 
 function CategoryShowPage() {
   const { categoryId } = useParams();
-  // const storeCollections = useSelector(getCollections());
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const storeCategory = useSelector(getCategory(categoryId));
+  const storeCategory = useSelector(getCategory(parseInt(categoryId)));
   const [category, setCategory] = useState();
 
  useEffect(() => {
-  if (typeof categoryId === 'undefined')   navigate("/404");
- }, [categoryId]);
+
+  if (category && (category?.id !== parseInt(categoryId)))   navigate("/404");
+ }, [category,storeCategory]);
 
 
 
@@ -30,6 +31,7 @@ function CategoryShowPage() {
 
   if (!category) return null;
   if (!categoryId) return null;
+  if (!storeCategory) return null
   let count = storeCategory?.itemIds.length;
   return (
     <>
