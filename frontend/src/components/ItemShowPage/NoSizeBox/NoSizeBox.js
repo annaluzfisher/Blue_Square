@@ -14,29 +14,29 @@ function NoSizeBox({ item }) {
   const [quantity, setQuantity] = useState("1");
 
   // const storeCart = useSelector((state) => state.cart);
-const cartId = useSelector(getCartId)
+  const cartId = useSelector(getCartId);
   const currentUser = useSelector((state) => state.session.user);
+  
+    useEffect(() => {
+      if (!cartId && currentUser) dispatch(fetchCart(currentUser.id));
+    }, [currentUser]);
 
   const [itemPayload, setItemPayload] = useState({});
   const ADDED_ID = 4;
-
 
   useEffect(() => {
     let input = parseInt(quantity);
     if (input < 1) input = 1;
     else if (!input) input = "";
     setQuantity(parseInt(input));
-
   }, [quantity]);
 
-
-
+  console.log("where are weeee", cartId);
   useEffect(() => {
-    console.log('where are weeee', cartId)
     if (currentUser) {
       setItemPayload({
         itemId: item.id,
-        cartId: currentUser.cart,
+        cartId: cartId,
         quantity: quantity,
       });
     }
@@ -47,21 +47,14 @@ const cartId = useSelector(getCartId)
 
     if (!currentUser) {
       navigate("/Cart");
-  
     } else {
       dispatch(addCartItem(itemPayload));
       dispatch(toggleModal(ADDED_ID));
-
-   
     }
   };
   return (
     <form className="no-size-box-form" onSubmit={addToCart}>
       <div className="size-box">
-        
-      
-   
-  
         <span>----------------------------------------------------------</span>
         <div className="sb-price">
           <span>$ {item.price}</span> <span>USD</span>
@@ -77,9 +70,8 @@ const cartId = useSelector(getCartId)
               />
             </label>
           </div>
-         
-            <Button type="submit" name="ADD TO BAG"></Button>
-      
+
+          <Button type="submit" name="ADD TO BAG"></Button>
         </div>
         <span>----------------------------------------------------------</span>
       </div>

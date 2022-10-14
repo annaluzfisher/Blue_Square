@@ -41,7 +41,7 @@ export const getCartId = (state) => {
   else if (!state.cart) return null;
   else if (!state.cart.id) return null;
   else {
-    return state.cart.id
+    return state.cart.id.id
   }
 };
 
@@ -112,7 +112,7 @@ const cartReducer = (state = { items: {} , numItems: 0}, action) => {
   let newState = {...state};
   switch (action.type) {
     case RECEIVE_CART:
-  
+      newState.id = action.payload.id
       if (action.payload.items){
       const cartItems = Object.values(action.payload.items)
       for (let item of cartItems){

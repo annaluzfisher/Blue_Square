@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Button from "../../Buttons/Button";
 import { toggleModal } from "../../../store/ui";
 import { useDispatch, useSelector } from "react-redux";
-import { addCartItem} from "../../../store/cart";
+import { addCartItem, fetchCart, getCartId} from "../../../store/cart";
 import { useNavigate } from "react-router-dom";
 import { getCurrentUser } from "../../../store/session";
 
@@ -19,7 +19,12 @@ function SizeBox({ item }) {
 
   const [itemPayload, setItemPayload] = useState({});
   const ADDED_ID = 4;
+  const cartId = useSelector(getCartId);
 
+
+  useEffect(() => {
+    if (!cartId && currentUser) dispatch(fetchCart(currentUser.id));
+  }, [currentUser]);
 
 
   useEffect(() => {
@@ -58,7 +63,7 @@ function SizeBox({ item }) {
     if (currentUser) {
       setItemPayload({
         itemId: item.id,
-        cartId: currentUser.cart,
+        cartId: cartId,
         size: size,
         quantity: quantity,
       });
