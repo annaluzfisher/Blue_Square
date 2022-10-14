@@ -64,6 +64,7 @@ margin-top: 1%;
 
 .title-wrapper {
   font-size: 2rem;
+  padding: 3%;
   display: inline-block;
   font-family: "Roboto", sans-serif;
   margin-left: min(180px,40%);
