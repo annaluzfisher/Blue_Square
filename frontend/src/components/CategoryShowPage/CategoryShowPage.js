@@ -42,7 +42,7 @@ function CategoryShowPage() {
       </div>
       <div className="cat-page-images-container">
         {storeCategory?.itemIds.map((itemId) => {
-          return <ImageSnapshot itemId={itemId} />;
+          return <ImageSnapshot key={itemId} itemId={itemId} />;
         })}
       </div>
     </>

@@ -74,10 +74,10 @@ function ExpandableActivities({ collectionId }) {
                   <span key={catId[0]}>{categories[catId[0]].name}</span>
                 </div>
                 <div className="a-sub-cat-container">
-                  {catId[1].map((sub) => {
+                  {catId[1].map((sub,i) => {
                     return (
                       <Link to={`Category/${sub}`}>
-                        <span onClick={handleToggle} key={sub}>
+                        <span onClick={handleToggle} key={i}>
                           {categories[sub].name}
                         </span>
                       </Link>

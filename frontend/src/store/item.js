@@ -55,7 +55,7 @@ const itemReducer = (state = { error: false }, action) => {
       newState.error = false;
       return { ...newState };
     case RECEIVE_ERROR:
-      console.log(action.error);
+   
       newState.error = action.error;
       return newState;
 

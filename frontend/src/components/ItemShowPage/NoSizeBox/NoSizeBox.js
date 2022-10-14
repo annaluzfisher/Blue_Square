@@ -31,7 +31,7 @@ function NoSizeBox({ item }) {
     setQuantity(parseInt(input));
   }, [quantity]);
 
-  console.log("where are weeee", cartId);
+
   useEffect(() => {
     if (currentUser) {
       setItemPayload({

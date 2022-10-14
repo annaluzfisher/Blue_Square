@@ -19,6 +19,9 @@ import CategoryShowPage from "./components/CategoryShowPage";
 import CollectionShowPage from "./components/CollectionShowPage";
 
 function App() {
+  console.log('Welcome *' )
+  console.log("<Happy to Have you Here/>");
+    console.log("'Being bad at something is the first step to being really good at something'");
   const dispatch = useDispatch();
   const [currentUser, setCurrentUser] = useState(tempCurrentUser);
 

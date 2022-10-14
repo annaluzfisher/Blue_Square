@@ -67,8 +67,8 @@ function ExpandableCollection({ collectionId }) {
         {final.map((catId,i) => {
           if (categories[catId]) {
             return (
-              <Link to={`Category/${catId}`}>
-                <p onClick={handleToggle} key={catId}>{categories[catId].name}</p>
+              <Link to={`Category/${catId}`} key={catId}>
+                <p onClick={handleToggle}>{categories[catId].name}</p>
               </Link>
             );
           } else {

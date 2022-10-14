@@ -13,7 +13,7 @@ import AddedToBag from "../Modals/AddedToBag";
 function ItemShowPage() {
   const { itemId } = useParams();
   const dispatch = useDispatch();
-  const storeItem = useSelector(getItem(itemId));
+  const storeItem = useSelector(getItem(parseInt(itemId)));
   const [item, setItem] = useState({ name: " ", description: " " });
   const [colId, setColId] = useState();
   const ADDED_ID = 4;
@@ -62,7 +62,7 @@ function ItemShowPage() {
     if (error) {
       navigate("/404");
     }
-    console.log("lets see how it breaks", error);
+
   }, [error]);
   if (!item) return null;
 
