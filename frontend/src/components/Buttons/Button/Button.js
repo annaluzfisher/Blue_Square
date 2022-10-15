@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleModal } from "../../../store/ui";
 
-
 function Button({
   localPath = "/",
   name,
@@ -30,7 +29,9 @@ function Button({
   } else {
     return (
       <Link to={localPath}>
-        <div className={`button ${primary}`} onClick={handleClick}>{name} </div>
+        <div className={`button ${primary}`} onClick={handleClick}>
+          {name}{" "}
+        </div>
       </Link>
     );
   }
