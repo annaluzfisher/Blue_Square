@@ -10,7 +10,7 @@
 * PG Search
 * PostgreSQL
 
-# Background
+# Summary
 
 This project was my first time working with React, and there were a lot of lessons learned. It is a clone Black Diamond's E-commerce website. 
 The features provided to the user are:
@@ -19,6 +19,7 @@ Search feature
 Full CRUD features for Reviews
 Full CRUD features for their cart
 
+# Challenges / Story time
 The main challenges I faced were dealing with sizes of items, rendering the write-review/edit review form conditionally, designing the database allowing for categories with parent categories and collections. I will elaborate below.
 
 Items in the cart should be listed only once, and the quantity should be updated if more of the same item are added. This could be solved with a uniquenes contraint on the cart_id and the item_id if not for the fact that two items with two different sizes can exist in the same cart and should be rendered as separate items. 
