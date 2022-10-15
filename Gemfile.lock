@@ -202,7 +202,7 @@ DEPENDENCIES
   pg_search (~> 2.3, >= 2.3.6)
   pry-rails
   puma (~> 5.0)
-  rails (~> 7.0.3, >= 7.0.3.1)
+  rails (~> 7.0.3, >= 7.0.3.0)
   tzinfo-data
 
 RUBY VERSION
