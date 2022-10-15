@@ -1,4 +1,16 @@
-# README
+# Blue Square
+
+[Click here to view!](https://blue-square-clone.herokuapp.com/#/)
+
+# Technologies Used
+* Rails
+* React
+* Redux
+* Jbuilder
+* PG Search
+* PostgreSQL
+
+# Background
 
 This project was my first time working with React, and there were a lot of lessons learned. It is a clone Black Diamond's E-commerce website. 
 The features provided to the user are:
