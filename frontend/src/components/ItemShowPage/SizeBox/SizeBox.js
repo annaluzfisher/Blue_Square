@@ -5,7 +5,7 @@ import Button from "../../Buttons/Button";
 import { toggleModal } from "../../../store/ui";
 import { useDispatch, useSelector } from "react-redux";
 import { addCartItem, fetchCart, getCartId} from "../../../store/cart";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getCurrentUser } from "../../../store/session";
 
 function SizeBox({ item }) {
@@ -13,7 +13,7 @@ function SizeBox({ item }) {
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState("1");
   const [size, setSize] = useState();
-
+  const {itemId} = useParams();
 
   const currentUser = useSelector(getCurrentUser);
 
@@ -62,7 +62,7 @@ function SizeBox({ item }) {
   useEffect(() => {
     if (currentUser) {
       setItemPayload({
-        itemId: item.id,
+        itemId: itemId,
         cartId: cartId,
         size: size,
         quantity: quantity,
@@ -85,7 +85,7 @@ function SizeBox({ item }) {
       },400)
     }
   };
-
+if (!item) return null;
   return (
     <form className="size-box-form" onSubmit={addToCart}>
       <div className="size-box">

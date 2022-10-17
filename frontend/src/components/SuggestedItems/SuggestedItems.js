@@ -9,7 +9,7 @@ function SuggestedItems({title, collectionId}) {
   const dispatch = useDispatch();
   const storeCollections = useSelector(getCollections());
   const [collection, setCollection] = useState();
-  const [itemIds, setItemIds] = useState([])
+  const [itemIds, setItemIds] = useState()
 
   useEffect(() => {
     setCollection(storeCollections.collections[collectionId]);
@@ -19,8 +19,11 @@ function SuggestedItems({title, collectionId}) {
 
  
 useEffect(()=>{
-  let sample = collection?.itemIds.slice(0, 11);
+
+  if (!itemIds){
+  let sample = collection?.itemIds.slice(0, 10);
   setItemIds(sample)
+  }
 
 },[collection])
 

@@ -5,15 +5,15 @@ import Button from "../../Buttons/Button";
 import { toggleModal } from "../../../store/ui";
 import { useDispatch, useSelector } from "react-redux";
 import { addCartItem, fetchCart, getCartId } from "../../../store/cart";
-import { useNavigate } from "react-router-dom";
-import { getCurrentUser } from "../../../store/session";
+import { useNavigate , useParams} from "react-router-dom";
+
 
 function NoSizeBox({ item }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState("1");
+  const { itemId } = useParams();
 
-  // const storeCart = useSelector((state) => state.cart);
   const cartId = useSelector(getCartId);
   const currentUser = useSelector((state) => state.session.user);
   
@@ -33,9 +33,10 @@ function NoSizeBox({ item }) {
 
 
   useEffect(() => {
+    console.log('what is the idtem id', itemId)
     if (currentUser) {
       setItemPayload({
-        itemId: item.id,
+        itemId: parseInt(itemId),
         cartId: cartId,
         quantity: quantity,
       });
@@ -48,8 +49,10 @@ function NoSizeBox({ item }) {
     if (!currentUser) {
       navigate("/Cart");
     } else {
+    
       dispatch(addCartItem(itemPayload));
       dispatch(toggleModal(ADDED_ID));
+      setQuantity(1)
     }
   };
   return (
