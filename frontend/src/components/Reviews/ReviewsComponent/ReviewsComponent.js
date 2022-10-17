@@ -13,7 +13,6 @@ function ReviewsComponent({ item }) {
   const storeItem = useSelector(getItem(itemId));
   const [loading, setLoading] = useState(true);
 
-  const [numReviews, setNumReviews] = useState(0);
   const [formVisible, setFormVisible] = useState(false);
   const edit = useRef(false);
   const currentUser = useSelector((state) => state.session.user);
@@ -22,39 +21,35 @@ function ReviewsComponent({ item }) {
 
   const [editableReview, setEditableReview] = useState();
 
-  const handleFormToggle = ()=>{
-   if (formVisible) {
-    setFormVisible(false)
-    setLoading(true)
+  const handleFormToggle = () => {
+    if (formVisible) {
+      setFormVisible(false);
+      setLoading(true);
     } else {
-      setFormVisible(true)
-      setTimeout(()=>{
-        setLoading(false)
-      },700)
+      setFormVisible(true);
+      setTimeout(() => {
+        setLoading(false);
+      }, 700);
     }
-  }
-
-  useEffect(()=>{
-    if (!storeItem?.reviewIds.includes(editableReview?.id)){
-      edit.current = false
-      setEditableReview()
-    }
-
-  },[storeReviews.length])
+  };
 
   useEffect(() => {
-    setLoading(true)
-    setFormVisible(true)
-    setTimeout(()=>{
-      setFormVisible(false)
-    },600)
+    if (!storeItem?.reviewIds.includes(editableReview?.id)) {
+      edit.current = false;
+      setEditableReview();
+    }
+  }, [storeReviews.length]);
+
+  useEffect(() => {
+    setLoading(true);
+    setFormVisible(true);
+    setTimeout(() => {
+      setFormVisible(false);
+    }, 600);
   }, [itemId, item.reviewIds?.length]);
-
-
 
   useEffect(() => {
     if (storeReviews && currentUser) {
-      setNumReviews(storeReviews.length);
       storeReviews.map((sreview) => {
         if (
           sreview.userId === currentUser.id &&
@@ -63,12 +58,12 @@ function ReviewsComponent({ item }) {
           setEditableReview(sreview);
           edit.current = true;
         } else {
-          edit.current = false
-          setEditableReview()
+          edit.current = false;
+          setEditableReview();
         }
       });
     }
-  }, [itemId,item.reviewIds?.length]);
+  }, [itemId, item.reviewIds?.length]);
 
   if (!item) return null;
   return (
@@ -91,9 +86,7 @@ function ReviewsComponent({ item }) {
         </div>
         <span>{item.reviewIds?.length} Reviews</span>
         <div className="bottom-bar">
-          <div
-            onClick={handleFormToggle}
-          >
+          <div onClick={handleFormToggle}>
             <i className="fa-regular fa-pen-to-square"></i>
             {edit.current ? (
               <span>Edit Review</span>
@@ -108,7 +101,7 @@ function ReviewsComponent({ item }) {
           item={itemId}
           review={editableReview}
           patch={edit.current}
-         formLoading={loading}
+          formLoading={loading}
         />
       )}
       {storeItem?.reviewIds &&

@@ -20,7 +20,7 @@ function CartPage() {
     if (currentUser?.id !== parseInt(userId)) navigate("/Cart");
   }, [userId, currentUser]);
   const dispatch = useDispatch();
-  const storeCart = useSelector(getCart);
+  const storeCart = useSelector(getCart());
   const collections = useSelector(getCollections());
   const [suggestionId, setSuggestionId] = useState();
   const [loading, setLoading] = useState(true);

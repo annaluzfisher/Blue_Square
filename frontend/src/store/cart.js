@@ -36,6 +36,7 @@ export const getCart = (state) => {
     return Object.values(state.cart.items);
   }
 };
+
 export const getCartId = (state) => {
   if (!state) return null;
   else if (!state.cart) return null;

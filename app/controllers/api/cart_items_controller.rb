@@ -2,20 +2,16 @@ class Api::CartItemsController < ApplicationController
 
 
   def update
-
-    # debugger
     @cart_item = CartItem.find(params[:id])
     if @cart_item.update!(quantity: params[:quantity])
       @cart = Cart.find(@cart_item.cart_id)
         render "/api/carts/show"
     else
-            render "api/errors/internal_server_error", status: :internal_server_error
-      end
-   
+        render "api/errors/internal_server_error", status: :internal_server_error
+    end
   end
   
   def create
-    # debugger
     item_id =  params[:cart_item][:item_id]
     size = params[:cart_item][:size]
     quantity = params[:cart_item][:quantity]
@@ -27,14 +23,16 @@ class Api::CartItemsController < ApplicationController
       if check.length > 0
         @found_cart_item = check[0]
         new_quantity = @found_cart_item.quantity + quantity
-       if  @found_cart_item.update!(quantity: new_quantity)
+
+        if  @found_cart_item.update!(quantity: new_quantity)
          render "/api/carts/show"
-       else
+        else
          render "api/errors/internal_server_error", status: :internal_server_error
-                end
+        end
+
       elsif
            @cart_item = CartItem.new(item_id: item_id, size: size, quantity: quantity,cart_id: cart_id)
-                  if @cart_item.save!
+                if @cart_item.save!
                     render "/api/carts/show"
                 else
                 render "api/errors/internal_server_error", status: :internal_server_error

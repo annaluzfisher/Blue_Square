@@ -12,4 +12,3 @@ class Api::CollectionsController < ApplicationController
   
 end
 
-##for items. remember to check how many times higttin db
