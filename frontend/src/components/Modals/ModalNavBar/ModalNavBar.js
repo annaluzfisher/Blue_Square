@@ -4,7 +4,7 @@ import { toggleModal } from "../../../store/ui";
 import Logo from '../../Buttons/Logo/index'
 import { Link } from 'react-router-dom'
 
-function ModalNavBar({modalId, extra = false ,subtotal}) {
+function ModalNavBar({modalId, extra = false}) {
      const dispatch = useDispatch();
        const currentUser = useSelector((state) => state.session.user);
        let color;
