@@ -86,8 +86,7 @@ export const addCartItem = (cart_item) => async (dispatch) => {
   });
   if (res.ok) {
     const cart = await res.json();
-    
-
+  
     dispatch(receiveCart(cart));
   }
 };
@@ -108,11 +107,12 @@ export const updateCartItem = (cartItemId, quantity) => async (dispatch) => {
   }
 };
 
-const cartReducer = (state = { items: {} , numItems: 0}, action) => {
+const cartReducer = (state = {items: {}, numItems: 0}, action) => {
   Object.freeze(state);
   let newState = {...state};
   switch (action.type) {
     case RECEIVE_CART:
+  
       newState.id = action.payload.id
       if (action.payload.items){
       const cartItems = Object.values(action.payload.items)

@@ -87,6 +87,7 @@ function SizeBox({ item }) {
     }
   };
 if (!item) return null;
+
   return (
     <form className="size-box-form" onSubmit={addToCart}>
       <div className="size-box">

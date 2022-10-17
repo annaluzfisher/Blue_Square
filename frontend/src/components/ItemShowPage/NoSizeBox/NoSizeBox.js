@@ -18,7 +18,7 @@ function NoSizeBox({ item }) {
   const currentUser = useSelector((state) => state.session.user);
   
     useEffect(() => {
-      if (!cartId && currentUser) dispatch(fetchCart(currentUser.id));
+      if (currentUser) dispatch(fetchCart(currentUser.id));
     }, [currentUser]);
 
   const [itemPayload, setItemPayload] = useState({});
@@ -34,6 +34,7 @@ function NoSizeBox({ item }) {
 
 
   useEffect(() => {
+   
     if (currentUser && cartId) {
       setItemPayload({
         itemId: parseInt(itemId),
@@ -56,6 +57,7 @@ function NoSizeBox({ item }) {
     }
   };
   if(!item) return null
+
   return (
     <form className="no-size-box-form" onSubmit={addToCart}>
       <div className="size-box">
