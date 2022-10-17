@@ -19,7 +19,7 @@ function CartItemSnapshot({ item, fromModal = false }) {
       if (quantity - 1 > 0) {
         setQuantity(quantity - 1);
       } else {
-        setQuantity(0);
+        setQuantity(item.quantity)
         dispatch(deleteCartItem(item.cartItemId));
       }
     }
@@ -55,7 +55,7 @@ function CartItemSnapshot({ item, fromModal = false }) {
 
       <div className="cis-editor">
         <div onClick={() => updateQuantity("up")}>+</div>
-        <div>{quantity}</div>
+        <div>{item.quantity}</div>
         <div onClick={() => updateQuantity("down")}>-</div>
       </div>
       <div className="price">
