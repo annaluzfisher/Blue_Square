@@ -185,14 +185,16 @@ function ReviewForm({
                   </div>
                 </div>
               ) : (
-                <Button
-                  className="post"
-                  color={"black"}
-                  type={"submit"}
-                  name={"POST"}
-                />
-              )}
+                <div className="button-err-holder">
+                  <Button
+                    className="post"
+                    color={"black"}
+                    type={"submit"}
+                    name={"POST"}
+                  />
               {errors && <Errors errors={errors} />}
+                </div>
+              )}
             </form>
           </>
         )}

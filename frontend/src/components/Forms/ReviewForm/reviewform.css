@@ -1,5 +1,6 @@
 .review-form-container{
-  height: 77%;
+  /* height: 77%; */
+  min-height: fit-content;
   width: 85%;
     border-bottom: 1px solid rgb(157, 157, 157);
   position: relative;
@@ -19,8 +20,11 @@ color: #88260f;
   animation-duration: .6s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-
 }
+.review-form-container form > label,.form-stars-container {
+  margin-bottom: 2%;
+}
+
 
 .form-loader{
 padding: 100%;
@@ -29,13 +33,19 @@ padding: 100%;
 
 
 input[type='text']{
-  margin-top: -15px;
+
+  margin: 2%;
+  margin-left:0;
+  margin-top:0;
   height: 30px;
 }
 
 input[type='textarea']{
   height: 60px;
-    margin-top: -15px;
+  margin: 2%;
+  margin-left:0;
+   margin-top:0;
+  
 }
 
 .post{
@@ -48,7 +58,7 @@ input[type='textarea']{
 }
 .form-stars-container{
   display: flex;
- margin-top: -15px;
+
 margin-left: none;
 font-size: 20px;
 }
@@ -90,4 +100,11 @@ justify-content: space-between;
 
 .review-form-container .errors{
   transform: scale(.6);
+}
+
+.button-err-holder{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }

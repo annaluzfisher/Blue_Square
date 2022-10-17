@@ -1,7 +1,7 @@
 .reviews-header, .ratings-header{
   width: 85%;
-  height: 10%;
-  min-height: 80px;
+
+  height: fit-content;
   border-bottom: 1px solid rgb(157, 157, 157);
   position: relative;
   margin-left:8%;
@@ -12,11 +12,12 @@
 }
 
 .ratings-header{
-  height: 30%;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 2%;
 }
 .stars-container-reviews{
   width:200px;
@@ -43,8 +44,8 @@ color: var(--orange)
   margin: 0;
 }
 .bottom-bar{
-  /* border: 2px solid blue; */
-  height: 5%;
+  /* border: 2px solid red; */
+  height: fit-content;
   width: 100%;
   display: flex;
     justify-content: right;
@@ -55,10 +56,11 @@ margin-top: 2%;
   display: flex;
   justify-content: space-between;
   border: 1px solid rgb(160, 160, 160);
-
   height: fit-content;
   width: 130px;
   padding: 10px;
+  margin-bottom: 10px;
+  /* border: 1px solid blue; */
   color: rgb(67, 67, 67);
 }
 
