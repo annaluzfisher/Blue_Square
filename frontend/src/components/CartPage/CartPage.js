@@ -36,6 +36,10 @@ function CartPage() {
     dispatch(fetchCart(currentUser?.id));
   }, [currentUser]);
 
+  useEffect(()=>{
+    if (!storeCart) fetchCart(currentUser?.id)
+  },[storeCart, currentUser])
+
   setTimeout(() => {
     setLoading(false);
   }, 1000);
