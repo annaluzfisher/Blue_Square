@@ -55,9 +55,10 @@ margin-top: 1%;
 .nav-left {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content:flex-start;
   height: 100%;
   width: 100%;
+  margin-left: 7%;
 
 }
 
@@ -67,7 +68,6 @@ margin-top: 1%;
   padding: 3%;
   display: inline-block;
   font-family: "Roboto", sans-serif;
-  margin-left: min(180px,40%);
 }
 .hover-icon:hover{
   color: var(--orange)
