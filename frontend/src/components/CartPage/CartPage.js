@@ -9,16 +9,18 @@ import SuggestedItems from "../SuggestedItems";
 import { getCurrentUser } from "../../store/session";
 import { getCollections } from "../../store/collections";
 import BeatLoader from "react-spinners/BeatLoader";
-import CheckoutModal from "./CheckoutModal";
+
 
 function CartPage() {
   const currentUser = useSelector(getCurrentUser);
   const { userId } = useParams();
   const navigate = useNavigate();
+
   useEffect(() => {
     if (!currentUser) navigate("/Cart");
     if (currentUser?.id !== parseInt(userId)) navigate("/Cart");
   }, [userId, currentUser]);
+
   const dispatch = useDispatch();
   const storeCart = useSelector(getCart);
   const collections = useSelector(getCollections());
@@ -40,7 +42,7 @@ function CartPage() {
 
   const numItems = useSelector((state) => {
     if (!state.cart.numItems) {
-      return 0;
+      return '0';
     } else {
       return state.cart.numItems.numItems;
     }

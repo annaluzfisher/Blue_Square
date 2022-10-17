@@ -62,10 +62,10 @@ function SizeBox({ item }) {
   useEffect(() => {
     if (currentUser) {
       setItemPayload({
-        itemId: itemId,
+        itemId: parseInt(itemId),
         cartId: cartId,
         size: size,
-        quantity: quantity,
+        quantity: parseInt(quantity),
       });
     }
 

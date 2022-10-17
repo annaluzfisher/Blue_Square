@@ -36,9 +36,9 @@ function NoSizeBox({ item }) {
   useEffect(() => {
     if (currentUser) {
       setItemPayload({
-        itemId: itemId,
+        itemId: parseInt(itemId),
         cartId: cartId,
-        quantity: quantity,
+        quantity: parseInt(quantity),
       });
     }
   }, [itemId]);
