@@ -112,18 +112,18 @@ const cartReducer = (state = {items: {}, numItems: 0}, action) => {
   let newState = {...state};
   switch (action.type) {
     case RECEIVE_CART:
-  
-      newState.id = action.payload.id
-      if (action.payload.items){
-      const cartItems = Object.values(action.payload.items)
-      for (let item of cartItems){
+    return {...action.payload}
+    //   newState.id = action.payload.id
+    //   if (action.payload.items){
+    //   const cartItems = Object.values(action.payload.items)
+    //   for (let item of cartItems){
       
-        newState.items[item.cartItemId] = item;
-      }
-    }
-      newState.numItems = action.payload.numItems || 0;
+    //     newState.items[item.cartItemId] = item;
+    //   }
+    // }
+    //   newState.numItems = action.payload.numItems || 0;
  
-      return newState;
+    //   return newState;
     case DELETE_ITEM:
         newState = {...action.payload}
       return newState;

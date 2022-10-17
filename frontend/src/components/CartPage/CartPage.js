@@ -36,9 +36,6 @@ function CartPage() {
     dispatch(fetchCart(currentUser?.id));
   }, [currentUser]);
 
-  useEffect(()=>{
-    if (!storeCart) fetchCart(currentUser?.id)
-  },[storeCart, currentUser])
 
   setTimeout(() => {
     setLoading(false);
@@ -46,7 +43,7 @@ function CartPage() {
 
   const numItems = useSelector((state) => {
     if (!state.cart.numItems) {
-      return '0';
+      return null;
     } else {
       return state.cart.numItems.numItems;
     }
