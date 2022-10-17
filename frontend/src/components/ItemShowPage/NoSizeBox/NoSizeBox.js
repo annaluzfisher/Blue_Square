@@ -34,14 +34,14 @@ function NoSizeBox({ item }) {
 
   console.log('what is the item id', itemId)
   useEffect(() => {
-    if (currentUser) {
+    if (currentUser && cartId) {
       setItemPayload({
         itemId: parseInt(itemId),
         cartId: cartId,
         quantity: parseInt(quantity),
       });
     }
-  }, [itemId]);
+  }, [itemId,cartId]);
 
   const addToCart = (e) => {
     e.preventDefault();
