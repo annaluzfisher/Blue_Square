@@ -119,6 +119,12 @@ function CartPage() {
   
   };
 
+  const getTotal=(subtotal) =>{
+ const tax = parseFloat(subtotal * 0.09).toFixed(2)
+ const sub =  parseFloat(subtotal).toFixed(2);
+
+return parseFloat(tax)+parseFloat(sub)
+  }
   if (!currentUser) return null;
 
   return (
@@ -172,7 +178,7 @@ function CartPage() {
             </div>
             <div>
               <span>Total</span>
-              <span>$ {parseFloat(subtotal * 0.09 + subtotal).toFixed(2)}</span>
+              <span>$ {getTotal(subtotal)}</span>
             </div>
             <div className="button" onClick={handleCheckout}>
               CHECK OUT NOW
