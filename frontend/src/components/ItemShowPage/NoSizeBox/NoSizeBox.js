@@ -32,16 +32,16 @@ function NoSizeBox({ item }) {
   }, [quantity]);
 
 
+  console.log('what is the item id', itemId)
   useEffect(() => {
-    console.log('what is the idtem id', itemId)
     if (currentUser) {
       setItemPayload({
-        itemId: parseInt(itemId),
+        itemId: itemId,
         cartId: cartId,
         quantity: quantity,
       });
     }
-  }, [quantity]);
+  }, [itemId]);
 
   const addToCart = (e) => {
     e.preventDefault();
@@ -55,6 +55,7 @@ function NoSizeBox({ item }) {
       setQuantity(1)
     }
   };
+  if(!item) return null
   return (
     <form className="no-size-box-form" onSubmit={addToCart}>
       <div className="size-box">

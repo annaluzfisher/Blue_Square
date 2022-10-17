@@ -117,6 +117,7 @@ const cartReducer = (state = { items: {} , numItems: 0}, action) => {
       if (action.payload.items){
       const cartItems = Object.values(action.payload.items)
       for (let item of cartItems){
+        console.log('what is the itme in reducer',item)
         newState.items[item.cartItemId] = item;
       }
     }

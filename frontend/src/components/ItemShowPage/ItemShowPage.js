@@ -79,7 +79,11 @@ function ItemShowPage() {
             <div>
               {item.new && <div>NEW</div>}
               <span> {item.name}</span>
-              {item.size ? <SizeBox item={item} /> : <NoSizeBox item={item} />}
+              {item.size ? (
+                <SizeBox item={item} itemId={itemId} />
+              ) : (
+                <NoSizeBox item={item} itemId={itemId} />
+              )}
             </div>
           </div>
         </div>
