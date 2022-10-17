@@ -122,7 +122,7 @@ function CartPage() {
   const getTotal=(subtotal) =>{
  const tax = parseFloat(subtotal * 0.09).toFixed(2)
  const sub =  parseFloat(subtotal).toFixed(2);
-console.log('tax',tax)
+
 return (parseFloat(tax) + parseFloat(sub)).toFixed(2)
   }
   if (!currentUser) return null;

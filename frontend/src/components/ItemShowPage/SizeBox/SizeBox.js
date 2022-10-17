@@ -60,7 +60,7 @@ function SizeBox({ item }) {
     }
   }
   useEffect(() => {
-    console.log('cartid size box pre send',cartId)
+ 
     if (currentUser && cartId) {
       setItemPayload({
         itemId: parseInt(itemId),

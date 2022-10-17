@@ -32,7 +32,7 @@ function NoSizeBox({ item }) {
   }, [quantity]);
 
 
-  console.log('what is the item id', itemId)
+
   useEffect(() => {
     if (currentUser && cartId) {
       setItemPayload({
