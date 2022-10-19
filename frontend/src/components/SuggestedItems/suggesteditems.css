@@ -17,6 +17,7 @@
   flex-direction: row;
    white-space: nowrap;
   overflow: scroll;
+  overflow-y: hidden;
 }
 
 .suggested-items-container h2{
