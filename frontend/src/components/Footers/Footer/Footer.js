@@ -28,15 +28,15 @@ function Footer() {
         </div>
 
         <div className="links-box" id='links-box'>
-          <Link to="https://github.com/annaluzfisher">
+          <a href="https://github.com/annaluzfisher">
             <i className="fa-brands fa-github-alt"></i>
-          </Link>
-          <Link to="https://www.linkedin.com/in/anna-luz-fisher-599862245/">
+          </a>
+          <a href="https://www.linkedin.com/in/anna-luz-fisher-599862245/">
             <i className="fa-brands fa-linkedin"></i>
-          </Link>
-          <Link to="https://www.instagram.com/weliketoexplore/">
+          </a>
+          <a href="https://www.instagram.com/weliketoexplore/">
             <i className="fa-brands fa-instagram"></i>
-          </Link>
+          </a>
         </div>
       </div>
     </>
